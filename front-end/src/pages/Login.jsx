@@ -75,7 +75,7 @@ const Login = () => {
             <label
               htmlFor="email"
               name="email"
-              className="text-left font-semibold text-white"
+              className="text-left font-semibold text-white "
             >
               Email:
             </label>
