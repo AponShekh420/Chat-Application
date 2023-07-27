@@ -86,7 +86,7 @@ const Login = () => {
               name="email"
               id="email"
               placeholder="Enter Your Email"
-              className=" p-2 rounded-md border-2 border-solid border-red-300 focus:outline-none focus:border-black"
+              className=" p-2  rounded-md border-2 border-solid border-red-300 focus:outline-none focus:border-black"
               required
             />
           </div>
