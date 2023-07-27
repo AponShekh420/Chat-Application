@@ -105,7 +105,7 @@ const Login = () => {
               type="password"
               name="password"
               id="password"
-              placeholder="Enter Your Password"
+              placeholder="Enter Your Password "
               className=" p-2 rounded-md border-2 border-solid border-red-300 focus:outline-none focus:border-black"
             />
           </div>
