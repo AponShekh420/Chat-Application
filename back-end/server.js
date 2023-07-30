@@ -35,7 +35,9 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 
-
+app.use('/', (req, res)=> {
+  res.send('server is running')
+})
 app.use('/api/users', userRouter)
 app.use('/api/chat', chatRouter)
 
