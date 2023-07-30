@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import { io } from "socket.io-client";
 
-let socket = io("https://chat-application-two-xi.vercel.app/");
+let socket = io(process.env.REACT_APP_SITE_URL);
 
 const SocketPro = createContext();
 
