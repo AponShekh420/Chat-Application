@@ -9,10 +9,10 @@ const userRouter = require('./routes/userRouter')
 const chatRouter = require('./routes/chatRouter')
 const app = express();
 
-// app.use(cors({
-//   credentials: true,
-//   origin: 'https://chat-application-x512.vercel.app',
-// }))
+app.use(cors({
+  credentials: true,
+  origin: 'https://chat-application-x512.vercel.app',
+}))
 
 dotenv.config();
 
