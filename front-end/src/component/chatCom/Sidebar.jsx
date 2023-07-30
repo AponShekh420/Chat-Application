@@ -8,6 +8,8 @@ import { GetSocket } from "../../context/SocketContext";
 import { menuOpen } from "../../redux/reducers/menuReducer";
 import User from "../common/User";
 
+const backendUrl = process.env.REACT_APP_SITE_URL;
+
 const CSSProperties = {
   display: "block",
   margin: "0 auto",
@@ -30,12 +32,9 @@ function Sidebar() {
     const fetchChats = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          `${process.env.REACT_APP_SITE_URL}/api/chat`,
-          {
-            withCredentials: true,
-          }
-        );
+        const { data } = await axios.get(`${backendUrl}/api/chat`, {
+          withCredentials: true,
+        });
 
         if (data.errors) {
           return;
