@@ -63,7 +63,7 @@ const Login = () => {
     }
   }, [navigate]);
   return (
-    <div className="flex items-center justify-center w-full h-screen">
+    <div className="flex items-center justify-center  w-full h-screen">
       <div className="w-full h-screen lg:w-96 lg:h-auto bg-slate-500 p-4 md:rounded-lg text-center">
         <h1 className="text-3xl font-bold text-white">Login Account</h1>
         <hr className="my-2" />
