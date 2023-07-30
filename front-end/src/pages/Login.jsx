@@ -21,7 +21,7 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     try {
-      console.log(process.env.REACT_APP_SITE_URL);
+      console.log(process.env.REACT_APP_SITE_URL + "hello");
       setLoading(true);
       const { data } = await axios.post(
         `${process.env.REACT_APP_SITE_URL}/api/users/login`,
