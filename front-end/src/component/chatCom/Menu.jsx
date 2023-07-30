@@ -26,7 +26,7 @@ function Menu() {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:3000/api/users?search=${search}`,
+        `${process.env.REACT_APP_SITE_URL}/api/users?search=${search}`,
         {
           withCredentials: true,
         }
@@ -41,7 +41,7 @@ function Menu() {
   const createChat = async (user) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/chat",
+        `${process.env.REACT_APP_SITE_URL}/api/chat`,
         user,
         {
           headers: {
@@ -94,7 +94,7 @@ function Menu() {
             <AiOutlineUsergroupAdd size={70} color="#17AEC9" />
           </div>
           <form
-            action={`http://localhost:3000/api/users?search=${search}`}
+            action={`${process.env.REACT_APP_SITE_URL}/api/users?search=${search}`}
             method="post"
           >
             <div className="bg-[#D9D9D9] rounded-2xl h-fit flex justify-center items-center">

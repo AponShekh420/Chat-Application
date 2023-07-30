@@ -30,9 +30,12 @@ function Sidebar() {
     const fetchChats = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get("http://localhost:3000/api/chat", {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_SITE_URL}/api/chat`,
+          {
+            withCredentials: true,
+          }
+        );
 
         if (data.errors) {
           return;

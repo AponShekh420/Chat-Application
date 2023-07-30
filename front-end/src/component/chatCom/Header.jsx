@@ -15,7 +15,7 @@ function Header() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/users/logout",
+        `${process.env.REACT_APP_SITE_URL}/api/users/logout`,
         null,
         {
           withCredentials: true,
@@ -61,7 +61,7 @@ function Header() {
                 onClick={() => setSubMenu(!subMenu)}
               >
                 <img
-                  src={`http://localhost:3000/uploads/avatars/${user.avatar}`}
+                  src={`${process.env.REACT_APP_SITE_URL}/uploads/avatars/${user.avatar}`}
                   alt="Profile Picture"
                   className="h-full w-full object-cover"
                 />

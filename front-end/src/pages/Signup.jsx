@@ -31,7 +31,7 @@ const Signup = () => {
         };
         setLoading(true);
         const { data } = await axios.post(
-          "http://localhost:3000/api/users/signup",
+          `${process.env.REACT_APP_SITE_URL}/api/users/signup`,
           formData,
           config
         );
@@ -76,7 +76,7 @@ const Signup = () => {
         <h1 className="text-3xl font-bold text-white">Create Account</h1>
         <hr className="my-2" />
         <form
-          action="http://localhost:3000/api/users/signup"
+          action={`${process.env.REACT_APP_SITE_URL}/api/users/signup`}
           method="post"
           encType="multipart/form-data"
           onSubmit={addUserData}

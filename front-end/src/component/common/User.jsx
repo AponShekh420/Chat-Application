@@ -20,7 +20,7 @@ function User({ user, chat, handler }) {
       <div className="profile w-14 h-14 rounded-full overflow-hidden flex items-center justify-center">
         {/* <FaUserCircle className="text-5xl bg-[#0E95BF] rounded-full text-white cursor-pointer select-none" />{" "} */}
         <img
-          src={`http://localhost:3000/uploads/avatars/${user?.avatar}`}
+          src={`${process.env.REACT_APP_SITE_URL}/uploads/avatars/${user?.avatar}`}
           alt="Profile Picture"
           className="h-full w-full object-cover"
         />

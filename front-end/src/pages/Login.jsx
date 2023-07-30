@@ -23,7 +23,7 @@ const Login = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        "http://localhost:3000/api/users/login",
+        `${process.env.REACT_APP_SITE_URL}/api/users/login`,
         {
           email,
           password,
@@ -67,7 +67,7 @@ const Login = () => {
         <h1 className="text-3xl font-bold text-white">Login Account</h1>
         <hr className="my-2" />
         <form
-          action="http://localhost:3000/api/users/login"
+          action={`${process.env.REACT_APP_SITE_URL}/api/users/login`}
           onSubmit={loginUser}
           method="post"
         >

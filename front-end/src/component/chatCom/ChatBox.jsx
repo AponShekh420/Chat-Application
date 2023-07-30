@@ -48,7 +48,7 @@ function ChatBox() {
         setMessage("");
         setIsTyping(false);
         const { data } = await axios.post(
-          "http://localhost:3000/api/chat/message",
+          `${process.env.REACT_APP_SITE_URL}/api/chat/message`,
           {
             content: message,
             chat: selectedChat.chat._id,
@@ -78,7 +78,7 @@ function ChatBox() {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:3000/api/chat/message?chatId=${selectedChat.chat._id}`,
+        `${process.env.REACT_APP_SITE_URL}/api/chat/message?chatId=${selectedChat.chat._id}`,
         {
           withCredentials: true,
         }
@@ -140,7 +140,7 @@ function ChatBox() {
                 <div className="profile w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
                   {/* <FaUserCircle className="text-5xl bg-[#0E95BF] rounded-full text-white cursor-pointer select-none" />{" "} */}
                   <img
-                    src={`http://localhost:3000/uploads/avatars/${selectedChat?.otherUser?.avatar}`}
+                    src={`${process.env.REACT_APP_SITE_URL}/uploads/avatars/${selectedChat?.otherUser?.avatar}`}
                     alt="Profile Picture"
                     className="h-full w-full object-cover"
                   />
@@ -199,7 +199,7 @@ function ChatBox() {
                       >
                         {/* <FaUserCircle className="text-5xl bg-[#0E95BF] rounded-full text-white cursor-pointer select-none" />{" "} */}
                         <img
-                          src={`http://localhost:3000/uploads/avatars/${selectedChat?.otherUser?.avatar}`}
+                          src={`${process.env.REACT_APP_SITE_URL}/uploads/avatars/${selectedChat?.otherUser?.avatar}`}
                           alt="Profile Picture"
                           className="h-full w-full object-cover"
                         />
@@ -243,7 +243,7 @@ function ChatBox() {
               <div></div>
             )}
             <form
-              action="http://localhost:3000/api/chat/message"
+              action={`${process.env.REACT_APP_SITE_URL}/api/chat/message`}
               className="flex w-full py-2"
               method="post"
               onSubmit={sendMessage}
