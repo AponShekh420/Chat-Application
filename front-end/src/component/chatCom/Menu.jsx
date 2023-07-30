@@ -5,6 +5,7 @@ import { GrClose } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import SyncLoader from "react-spinners/SyncLoader";
 import { ToastContainer, toast } from "react-toastify";
+import { GetSocket } from "../../context/SocketContext";
 import { menuClose } from "../../redux/reducers/menuReducer";
 import User from "../common/User";
 const CSSProperties = {
@@ -18,6 +19,8 @@ function Menu() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const socketObject = GetSocket();
+  const socket = socketObject.socket;
   const getUsers = async (e) => {
     e.preventDefault();
     try {
@@ -54,6 +57,7 @@ function Menu() {
         });
         return;
       } else {
+        socket.emit("new chat", data.chat);
         dispatch(menuClose());
         toast.success(data.message, {
           position: toast.POSITION.TOP_RIGHT,

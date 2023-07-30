@@ -116,7 +116,7 @@ function Sidebar() {
           )
         ) : (
           <div className="w-fit h-fit">
-            <h1 className="text-lg font-bold">
+            <h1 className="text-lg font-bold lg:px-7 text-center">
               No users have been added to the chat
             </h1>
           </div>

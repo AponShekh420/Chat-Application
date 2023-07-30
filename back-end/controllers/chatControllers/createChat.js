@@ -28,6 +28,7 @@ const createChat = async (req, res) => {
             })
             const result = await NewChat.save();
             res.status(200).json({
+                chat: result,
                 message: "Chat Was Created Successfully"
             })
         }
